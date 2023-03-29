@@ -19,3 +19,5 @@ Stay tuned for updates!
 
 # Contributing
 If you would like to contribute to Simple Website Generator, please feel free to submit a pull request. We welcome contributions from the community and are always looking for ways to improve our project.
+
+# DEMO: https://6424819af9e8f60c69edd98a--jade-elf-57be2c.netlify.app/
