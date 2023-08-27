@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/esm/Button";
 import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faItalic, faBold } from "@fortawesome/free-solid-svg-icons";
 
-export default function TextStyle(newStyle, setNewStyle) {
-  const [isBold, setBold] = useState(false);
-  const [isItalic, setItalic] = useState(false);
-
+export default function TextStyle({
+  newStyle,
+  setNewStyle,
+  isBold,
+  isItalic,
+  setBold,
+  setItalic,
+}) {
   const addStyle = (style) => {
     let actualStyle = newStyle;
     actualStyle += style;
@@ -19,15 +23,18 @@ export default function TextStyle(newStyle, setNewStyle) {
       case 0:
         addStyle("fw-bold ");
         setBold(!isBold);
-        if (isBold) setNewStyle("fw-normal ");
+        if (isBold) {
+          if (isItalic) setNewStyle("fst-italic ");
+          else setNewStyle("fw-normal ");
+        }
         break;
       case 1:
-        setNewStyle("fw-normal ");
-        break;
-      case 2:
         addStyle("fst-italic ");
         setItalic(!isItalic);
-        if (isItalic) setNewStyle("fw-normal ");
+        if (isItalic) {
+          if (isBold) setNewStyle("fw-bold ");
+          else setNewStyle("fw-normal ");
+        }
         break;
       default:
         break;
@@ -44,7 +51,7 @@ export default function TextStyle(newStyle, setNewStyle) {
       </Button>
       <Button
         variant={isItalic ? "secondary" : "light"}
-        onClick={() => handleTextStyle(2)}
+        onClick={() => handleTextStyle(1)}
       >
         <FontAwesomeIcon icon={faItalic} />
       </Button>

@@ -24,9 +24,25 @@ export default function Components({
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
+
+  // Style
   const [newStyle, setNewStyle] = useState("");
+  const [isBold, setBold] = useState(false);
+  const [isItalic, setItalic] = useState(false);
+
+  // Cap
   const [newCap, setNewCap] = useState(cap);
+  const [isLower, setLower] = useState(false);
+  const [isUpper, setUpper] = useState(false);
+  const [isCap, setCap] = useState(true);
+
+  // Align
   const [newAlign, setNewAlign] = useState(alignment);
+  const [isLeft, setLeft] = useState(false);
+  const [isRight, setRight] = useState(false);
+  const [isCenter, setCenter] = useState(true);
+
+  // Input Text
   const [newContentText, setNewContentText] = useState(text);
   const saveContent = () => {
     handleEditComponent(
@@ -49,15 +65,37 @@ export default function Components({
             <Modal.Title>{tags}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <TextStyle newStyle={newStyle} setNewStyle={() => setNewStyle} />
-            <TextTransform newCap={newCap} setNewCap={() => setNewCap} />
+            <TextStyle
+              newStyle={newStyle}
+              setNewStyle={setNewStyle}
+              isBold={isBold}
+              isItalic={isItalic}
+              setBold={setBold}
+              setItalic={setItalic}
+            />
+            <TextTransform
+              newCap={newCap}
+              setNewCap={setNewCap}
+              isLower={isLower}
+              isUpper={isUpper}
+              isCap={isCap}
+              setLower={setLower}
+              setCap={setCap}
+              setUpper={setUpper}
+            />
             <TextAlignment
               newAlign={newAlign}
-              setNewAlign={() => setNewAlign}
+              setNewAlign={setNewAlign}
+              isLeft={isLeft}
+              isRight={isRight}
+              isCenter={isCenter}
+              setLeft={setLeft}
+              setCenter={setCenter}
+              setRight={setRight}
             />
             <InputArea
-              newContentText={content}
-              setNewContentText={() => setNewContentText}
+              newContentText={newContentText}
+              setNewContentText={setNewContentText}
             />
           </Modal.Body>
           <Modal.Footer>

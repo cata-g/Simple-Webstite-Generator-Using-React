@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/esm/Button";
 
-export default function TextTransform(newCap, setNewCap) {
-  const [isLower, setLower] = useState(false);
-  const [isUpper, setUpper] = useState(false);
-  const [isCap, setCap] = useState(true);
-
+export default function TextTransform({
+  newCap,
+  setNewCap,
+  isCap,
+  isLower,
+  isUpper,
+  setCap,
+  setLower,
+  setUpper,
+}) {
   function goDefaultCap() {
     setCap(true);
     setLower(false);
@@ -32,6 +37,7 @@ export default function TextTransform(newCap, setNewCap) {
         break;
       case 2:
         setNewCap("text-capitalize ");
+        setCap(true);
         setLower(false);
         setUpper(false);
         break;

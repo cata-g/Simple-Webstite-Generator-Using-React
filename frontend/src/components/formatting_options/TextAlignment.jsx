@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/esm/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,11 +8,16 @@ import {
   faAlignCenter,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function TextAlignment(newAlign, setNewAlign) {
-  const [isLeft, setLeft] = useState(false);
-  const [isRight, setRight] = useState(false);
-  const [isCenter, setCenter] = useState(true);
-
+export default function TextAlignment({
+  newAlign,
+  setNewAlign,
+  isLeft,
+  isRight,
+  isCenter,
+  setLeft,
+  setRight,
+  setCenter,
+}) {
   const handleTextAlg = (id) => {
     switch (id) {
       case 0:
@@ -26,6 +31,8 @@ export default function TextAlignment(newAlign, setNewAlign) {
         setNewAlign("text-center ");
         setLeft(false);
         setRight(false);
+        setCenter(!isCenter);
+        if (isCenter) goDefaultAlgn();
         break;
       case 2:
         setNewAlign("text-end ");
