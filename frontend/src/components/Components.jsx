@@ -3,15 +3,6 @@ import "./Components.css";
 
 export default function Components({ id, name, text, handleAdd }) {
   return (
-    // <div className="card">
-    //   <div className="title">
-    //     <h3>
-    //       {id}.{name}
-    //     </h3>
-    //     <p>{content}</p>
-    //     <button onClick={handleAdd}>Click</button>
-    //   </div>
-    // </div>
     <div className="row m-1 p-1">
       <div className="col-3 align-self-center">
         <h5>{name}</h5>
