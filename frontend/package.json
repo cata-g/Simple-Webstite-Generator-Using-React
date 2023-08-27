@@ -27,8 +27,8 @@
     "path": false
   },
   "scripts": {
-    "start": "npm start --prefix .\frontend\",
-    "build": "npm build --prefix .\frontend\",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

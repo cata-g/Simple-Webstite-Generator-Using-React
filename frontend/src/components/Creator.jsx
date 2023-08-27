@@ -14,8 +14,6 @@ const buttons = [
     style: "",
     alignment: "",
     capitalization: "",
-    isTable: false,
-    isList: false,
   },
   {
     name: "H2",
@@ -25,8 +23,6 @@ const buttons = [
     style: "",
     alignment: "",
     capitalization: "",
-    isTable: false,
-    isList: false,
   },
   {
     name: "H3",
@@ -36,8 +32,6 @@ const buttons = [
     style: "",
     alignment: "",
     capitalization: "",
-    isTable: false,
-    isList: false,
   },
   {
     name: "H4",
@@ -47,8 +41,6 @@ const buttons = [
     style: "",
     alignment: "",
     capitalization: "",
-    isTable: false,
-    isList: false,
   },
   {
     name: "H5",
@@ -58,8 +50,6 @@ const buttons = [
     style: "",
     alignment: "",
     capitalization: "",
-    isTable: false,
-    isList: false,
   },
   {
     name: "P",
@@ -69,8 +59,6 @@ const buttons = [
     style: "",
     alignment: "",
     capitalization: "",
-    isTable: false,
-    isList: false,
   },
 ];
 
@@ -302,8 +290,6 @@ export default function Creator() {
                         : btn.content
                     }
                     text={btn.text}
-                    isTable={btn.isTable}
-                    isList={btn.isList}
                     style={btn.style}
                     capitalization={btn.capitalization}
                     alignment={btn.alignment}
